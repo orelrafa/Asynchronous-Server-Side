@@ -34,6 +34,7 @@ birthday: January, 10th, 1990
 
 
 Application
+
 The requirements include: 
 
 (1) Users can add new cost items, specifying the sum, category, and description (at the minimum) together with the user_id to add the new cost item to a specific user. 
@@ -56,7 +57,9 @@ The automatic test will try to add a new cost item by sending (with the POST met
 
 user_id, year, month, day, description, category, and sum. The category will be one of the available ones, according to this document.
 
-_____/report/ for getting (using the GET method) a detailed report (in JSON) that shows the exact costs for a specific month and year. The parameters should be year, month and user_id. 
+_____/report/ for getting (using the GET method) a detailed report (in JSON) that shows the exact costs for a specific month and year. 
+
+The parameters should be year, month and user_id. 
 
 The returned JSON document should describe an object with properties whose names are the possible categories (all categories should be included). 
 
@@ -64,9 +67,13 @@ The value of every property should be an array that includes objects that descri
 
 The names of the properties in every object that describes a cost item should be in accordance with the properties in MongoDB.
 
-The automatic test will try to get the report for a specific month, year and user by sending (with the GET method) the
+The automatic test will try to get the report for a specific month, year and user by sending (with the GET method) the following parameters: 
 
-following parameters: user_id, month, and year. 
+user_id, 
+
+month, 
+
+and year. 
 
 The expected returned document should look as the following example:
 
