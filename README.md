@@ -5,7 +5,7 @@ Cost Manager REStful Web Services
 The final project includes developing specific parts of REStful Web Services that allow the development of a client application for managing our daily costs.
 
 
-Database
+## Database
 
 The database should be a MongoDB database (using the MongoDB Atlas service). 
 
@@ -34,7 +34,7 @@ last_name: israeli
 birthday: January, 10th, 1990
 
 
-Application
+## Application
 
 The requirements include: 
 
@@ -50,7 +50,9 @@ Your code must use promises. The server side should be deployed on a server conn
 
 Your project should include the following REStful web services endpoints:
 
-_____/addcost/ for adding a new cost item using the POST method. 
+### _____/addcost/ 
+
+for adding a new cost item using the POST method. 
 
 The parameters should be with the same names of the properties the newly added document should have.
 
@@ -58,7 +60,9 @@ The automatic test will try to add a new cost item by sending (with the POST met
 
 user_id, year, month, day, description, category, and sum. The category will be one of the available ones, according to this document.
 
-_____/report/ for getting (using the GET method) a detailed report (in JSON) that shows the exact costs for a specific month and year. 
+### _____/report/ 
+
+for getting (using the GET method) a detailed report (in JSON) that shows the exact costs for a specific month and year. 
 
 The parameters should be year, month and user_id. 
 
@@ -96,7 +100,9 @@ The expected returned document should look as the following example:
 
 }
 
-_____/about/ for getting (using the GET method) a JSON that is an array of objects that describe the developers. 
+### _____/about/
+
+for getting (using the GET method) a JSON that is an array of objects that describe the developers. 
 
 Each developer should be described using the firstname, lastname, id, and email.
 
@@ -114,7 +120,7 @@ a specific form created for submitting the final project. That form will be avai
 https://forms.gle/Aqq3mbPXsDU2BAQN8.
 
 
-Code Style
+### Code Style
 
 The code in JavaScript should follow the style guide at 
 
