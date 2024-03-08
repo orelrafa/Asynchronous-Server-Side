@@ -2,8 +2,7 @@
 
 Cost Manager REStful Web Services
 
-The final project includes developing specific parts of REStful Web Services that allow the development of a client
-application for managing our daily costs.
+The final project includes developing specific parts of REStful Web Services that allow the development of a client application for managing our daily costs.
 
 
 Database
@@ -23,8 +22,7 @@ The id should be generated on the server side.
 
 The id won’t be sent together with the request.
 
-The database should be empty, except for a single document in users, that includes the details of an imaginary user, with the following data 
-(please note that the names of all properties include small letters only):
+The database should be empty, except for a single document in users, that includes the details of an imaginary user, with the following data (please note that the names of all properties include small letters only):
 
 id: 123123
 
@@ -44,9 +42,7 @@ The requirements include:
 
 The application that runs on the server side should be developed using Express.js, it should be developed in JavaScript
 
-(You cannot develop in TypeScript), and it should include REStful web services in accordance with the requirements listed
-
-in this document. 
+(You cannot develop in TypeScript), and it should include REStful web services in accordance with the requirements listed in this document. 
 
 Your code must use promises. The server side should be deployed on a server connected to the web.
 
@@ -58,12 +54,9 @@ The parameters should be with the same names of the properties the newly added d
 
 The automatic test will try to add a new cost item by sending (with the POST method) the following parameters: 
 
-user_id, year, month, day, description, category, and sum. The category will be one of the available ones, according to this
+user_id, year, month, day, description, category, and sum. The category will be one of the available ones, according to this document.
 
-document.
-_____/report/ for getting (using the GET method) a detailed report (in JSON) that shows the exact costs for a specific month and year.
-
-The parameters should be year, month and user_id. 
+_____/report/ for getting (using the GET method) a detailed report (in JSON) that shows the exact costs for a specific month and year. The parameters should be year, month and user_id. 
 
 The returned JSON document should describe an object with properties whose names are the possible categories (all categories should be included). 
 
@@ -78,20 +71,33 @@ following parameters: user_id, month, and year.
 The expected returned document should look as the following example:
 
 {
+
 “food”:[{“day”:21,”description”:”chocolate in ikea”,”sum”:20},{“day”:5,”description”:”milk”,”sum”:6} ],
+
 “health”:[ ],
+
 “housing”:[ ],
+
 “sport”:[ ],
+
 “education”:[ ],
+
 “transportation”:[ ],
+
 “other”:[ ]
+
 }
-_____/about/ for getting (using the GET method) a JSON that is an array of objects that describe the developers. Each
-developer should be described using the firstname, lastname, id, and email.
+
+_____/about/ for getting (using the GET method) a JSON that is an array of objects that describe the developers. 
+
+Each developer should be described using the firstname, lastname, id, and email.
 
 example:
-[{“firstname”:”dave”,”lastname”:”cohen”,”id”:234234,”email”:”daddd@gmail.com”},{“firstname”:”tal”,”lastname”:”levy”,”id”:34
-534544,”email”:”tal@gmail.com”} ]
+[
+
+{“firstname”:”dave”,”lastname”:”cohen”,”id”:234234,”email”:”daddd@gmail.com”},
+
+{“firstname”:”tal”,”lastname”:”levy”,”id”:34534544,”email”:”tal@gmail.com”} ]
 
 The ____ will be replaced with the link you (just the development team manager will need to submit that link) will submit at
 
