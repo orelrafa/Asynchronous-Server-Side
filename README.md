@@ -6,6 +6,7 @@ The final project includes developing specific parts of REStful Web Services tha
 
 
 Database
+
 The database should be a MongoDB database (using the MongoDB Atlas service). 
 
 The data should be organized incollections that at the minimum, includes the users and costs collections. 
