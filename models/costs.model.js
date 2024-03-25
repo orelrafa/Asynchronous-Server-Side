@@ -1,10 +1,8 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-// The costs collection should hold documents that (at the minimum) include the following properties: user_id, year, month, day, id, description, category, and sum
-
-const CostsSchema = new mongoose.Schema({
+const CostSchema = mongoose.Schema({
   user_id: {
-    type: mongoose.SchemaTypes.ObjectId,
+    type: Number,
     required: true,
   },
   year: {
@@ -14,15 +12,19 @@ const CostsSchema = new mongoose.Schema({
   month: {
     type: Number,
     required: true,
+    enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
   },
   day: {
     type: Number,
     required: true,
   },
   id: {
-    type: mongoose.SchemaTypes.ObjectId,
+    type: mongoose.Types.ObjectId,
     required: true,
     unique: true,
+    default: function () {
+      return this._id;
+    },
   },
   description: {
     type: String,
@@ -31,6 +33,7 @@ const CostsSchema = new mongoose.Schema({
   category: {
     type: String,
     lowercase: true,
+    required: true,
     enum: [
       "food",
       "health",
@@ -40,7 +43,6 @@ const CostsSchema = new mongoose.Schema({
       "transportation",
       "other",
     ],
-    required: true,
   },
   sum: {
     type: Number,
@@ -48,6 +50,6 @@ const CostsSchema = new mongoose.Schema({
   },
 });
 
-const Cost = mongoose.model("users", CostsSchema);
+const Cost = mongoose.model("Cost", CostSchema);
 
-export default Cost;
+module.exports = Cost;
