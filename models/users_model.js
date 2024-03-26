@@ -1,28 +1,33 @@
-const mongoose = require('mongoose');
+// Importing mongoose library
+const mongoose = require("mongoose");
 
-const UserSchema = mongoose.Schema(
-    {
-        id:{
-            type: Number,
-            required: true,
-            unique:true
-        },
-        first_name:{
-            type: String,
-            required: true
-        },
-        last_name:{
-            type: String,
-            required: true
-        },
-        birthday:{
-            type: Date,
-            required:true
-        }
+// Defining the schema for the User model
+const UserSchema = mongoose.Schema({
+  // Unique identifier for the user
+  id: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
+  // First name of the user
+  first_name: {
+    type: String,
+    required: true,
+  },
+  // Last name of the user
+  last_name: {
+    type: String,
+    required: true,
+  },
+  // Birthday of the user
+  birthday: {
+    type: Date,
+    required: true,
+  },
+});
 
-    }
-);
+// Creating the User model based on the schema
+const User = mongoose.model("User", UserSchema);
 
-const User = mongoose.model("User",UserSchema);
-
-module.exports= User;
+// Exporting the User model for use in other parts of the application
+module.exports = User;
