@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Cost = require('../models/costs.model.js');
-const User = require('../models/users.model.js')
+const Cost = require('../models/costs_model.js');
+const User = require('../models/users_model.js')
 
 
 router.get('/', async (req, res) => {
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }
-      
+
       //Check if valid year entered
       if(!year ||year<0){
         return res.status(400).json({error:'Invalid year entered or missing'});

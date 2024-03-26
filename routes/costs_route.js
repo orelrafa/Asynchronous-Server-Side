@@ -1,6 +1,6 @@
 const express = require("express");
-const Cost = require('../models/costs.model.js');
-const User = require('../models/users.model.js');
+const Cost = require('../models/costs_model.js');
+const User = require('../models/users_model.js');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     let year = req.body.year;
     let month = req.body.month;
     let day = req.body.day;
-  
+
     try {
       // Check if user exists
       const user = await User.findOne({ id: user_id });
@@ -61,11 +61,11 @@ router.post('/', async (req, res) => {
       if (!sum || sum<0) {
         return res.status(400).json({ error: 'Invalid sum or missing'});
       }
-  
+
       // Create new cost item
       const newCost = new Cost({ user_id, year, month, day, description, category, sum });
       await newCost.save();
-  
+
       res.status(201).json({ message: 'Cost item added successfully' });
     } catch (err) {
       res.status(500).json({ error: err.message });

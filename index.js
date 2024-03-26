@@ -2,9 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const costRoute = require("./routes/cost.route.js");
-const reportRoutes = require("./routes/report.routes.js");
-const aboutRoutes = require("./routes/about.route.js");
+const costRoute = require("./routes/costs_route.js");
+const reportRoutes = require("./routes/report_route.js");
+const aboutRoutes = require("./routes/about_route.js");
 const app = express();
 
 //middleware
