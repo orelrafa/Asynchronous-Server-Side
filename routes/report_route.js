@@ -1,9 +1,3 @@
-/*
-Developers:
-First name: Orel, Nikita
-Last name: Rafailov, Borochov
-ID: 318972957, 302238399
-*/
 const express = require("express");
 const router = express.Router(); // Creating an instance of Express Router
 const Cost = require("../models/costs_model.js"); // Importing the Cost model
