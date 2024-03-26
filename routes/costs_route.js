@@ -1,3 +1,9 @@
+/*
+Developers:
+First name: Orel, Nikita
+Last name: Rafailov, Borochov
+ID: 318972957, 302238399
+*/
 // Importing necessary modules
 const express = require("express");
 const Cost = require("../models/costs_model.js"); // Importing the Cost model
@@ -16,6 +22,11 @@ router.post("/", async (req, res) => {
   let day = req.body.day;
 
   try {
+    //Check if user_id is entered
+    if (!user_id) {
+      return res.status(400).json({ error: "Missing user_id" });
+    }
+
     // Check if user exists
     const user = await User.findOne({ id: user_id });
     if (!user) {
@@ -49,6 +60,11 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ error: "Invalid day" });
     }
 
+    //Check if description is entered
+    if (!description) {
+      return res.status(400).json({ error: "Missing description" });
+    }
+
     //Check if valid category entered
     if (
       ![
@@ -64,11 +80,6 @@ router.post("/", async (req, res) => {
       return res
         .status(400)
         .json({ error: "Invalid category entered or missing" });
-    }
-
-    //Check if description is entered
-    if (!description) {
-      return res.status(400).json({ error: "Missing description" });
     }
 
     //Check if sum is valid
